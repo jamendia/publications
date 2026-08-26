@@ -22,7 +22,7 @@ measurement · quantity · amount · degree · kind · nominalization
 
 - [`mendia&solt2025.pdf`](mendia&solt2025.pdf) — article
 - [`metadata.yaml`](metadata.yaml) — bibliographic metadata
-<!-- [`source/paper.tex`](source/paper.tex) — LaTeX source -->
+- [`source/mendia&solt2025.tex`](source/mendia&solt2025.tex) — LaTeX source
 
 ## License
 
