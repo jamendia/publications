@@ -1,0 +1,45 @@
+id: 2025soler
+type: article
+
+title: "The *soler* + INF periphrasis in Spanish"
+
+authors:
+  - given: "Jon Ander"
+    family: "Mendia"
+
+year: 2025
+
+status: published
+
+publication:
+  type: proceedings-article
+  book: "Proceedings of the 41st West Coast Conference on Formal Linguistics"
+  volume: "41"
+#  issue: 2
+  pages: "442-447"
+
+identifiers:
+  isbn: "978-1-57473-483-6"
+
+topics:
+  - genericity
+  - habituality
+  - quantificational adverbs
+
+languages:
+  - English
+
+keywords:
+  - genericity
+  - habituality
+  - quantificational adverbs
+  - event semantics
+  - Spanish
+
+
+files:
+  paper: "mendia2025b.pdf"
+#  source: "source/mendia2025b.tex"
+
+links:
+  doi: "https://www.lingref.com/cpp/wccfl/41/abstract3776.html"

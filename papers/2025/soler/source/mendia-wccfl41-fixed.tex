@@ -1,0 +1,292 @@
+\documentclass{cascadilla-xelatex-biblatex}
+
+\usepackage{stmaryrd}
+
+\ifthenelse{\boolean{usegb4e}}{}{%
+	\usepackage{xcolor}
+	\usepackage{mdframed}
+	\surroundwithmdframed[backgroundcolor=gray!10!white]{verbatim}
+}
+
+\title{The ``soler'' + INF periphrasis in Spanish\thanks{Jon Ander Mendia, Ikerbasque/UPV-EHU, \url{jonander.mendia@ehu.eus}. For valuable feedback and helfpul criticism, I would like to thank Hana Filip, Stephanie Solt, Friederike Moltmann and the audiences at WCCFL 41. This work was supported by the the Spanish Ministerio de Ciencia e Innovaci{\'o}n (PID 2020-112801GB-I00), the Generalitat de Catalunya (2021SGR787) and the Beatriu de Pin{\'o}s Program (BP2020-00121).}}
+
+\author{Jon Ander Mendia}
+
+
+\addbibresource{bibliography.bib}
+
+\begin{document}
+	
+	\maketitle
+	
+	\section{Introduction}
+	
+	Natural languages employ two main strategies to express frequent, iterated or habitual eventualities: either by means of verbs bearing morphological markers of imperfective aspect (which also allow so-called ongoing and dispositional interpretations), or by means of the dedicated ``habitual'' particles. In Spanish, rather than a particle, the dedicated construction to express habituality takes the shape of a periphrastic verb involving the verbal precicate \textit{soler} and its infinitive complement.
+	
+	\pex
+	\a\label{ex1a}\begingl
+	\gla Juan fuma //
+	\glb Juan smoke.\textsc{ipfv} {} {} \textsc{soler} smoke.\textsc{inf} {} //
+	\glft `Juan smokes (as a matter of habit)'//
+	\endgl
+	\a\label{ex1b}\begingl
+	\gla Juan suele fumar //
+	\glb Juan \textsc{soler} smoke.\textsc{inf} {} //
+	\glft `Juan smokes (as a matter of habit)'//
+	\endgl
+	\xe
+	
+	
+	The intricacies of the semantic contribution of the dedicated ``habitual'' or ``generic'' marker \textit{soler} in Spanish remains largely unexplored, as is the relation it bears to the more general unmarked imperfective mode. In this short paper we present a description of the main syntactic, semantic and pragmatic properties of habitual constructions with \textit{soler}, and sketch a first corresponding formal analysis capturing its semantic properties, its differences with restpect to habitual readings of its unmarked imperfective counterpart, and the pragmatic inferences that \textit{soler} is argued to convey. %\textcolor{red}{We finish the paper with a short note on that position \textit{soler} in the landscape of languages expressing marked habitual constructions by comparing it with similar expressions in a variety of languages, including English \textit{used to}, Czech \textit{va} and Basque \textit{ohi} particles.}
+	
+	
+	\section{Properties of ``soler''}
+	
+	We begin by describing the main syntactic, semantic and pragmatic properties of \textit{soler} periphrases. First and foremost, the main overarching property of \textit{soler} infinitive periphrases is that semantically they always convey a generalizing statement. Among other things, this means that they cannot ever apply to ongoing events, and thus (\ref{ex1b})---unlike its imperfective counterpart (\ref{ex1a})---cannot describe a situation where Juan is currently smoking. When describing ongoing events \textit{soler} statements simply come out false.
+	
+	\subsection{Distribution}
+	
+	From a syntactic standpoint, \textit{soler} shares properties with the distribution of both modal and aspectual periphrases. First, like modal verbs and unlike aspectual periphrases, \textit{soler}  cannot appear in the imperative (\ref{ex2}):
+	
+	\pex\label{ex2}
+	\a\begingl
+	\gla\ljudge{*}Suele cantar! //
+	\glb \textsc{soler.imp} sing.\textsc{inf} //
+	\glft Int.: `Have the habit of singing!'//
+	\endgl
+	\a\begingl
+	\gla\ljudge{*}Puede cantar! //
+	\glb can.\textsc{imp} to sing.\textsc{inf} //
+	\glft Int.: `Have the ability to sing!'//
+	\endgl
+	\a\begingl
+	\gla Empieza a cantar! //
+	\glb begin.\textsc{imp} to sing.\textsc{inf} //
+	\glft `Start singing!' //
+	\endgl
+	\xe
+	
+	However, like aspectual periphrases but unlike modal verbs, \textit{soler} cannot combine with compound infinitives, which typically take perfective morphology ((\ref{ex3}); see G{\'o}mez T{\'o}rrego 1999, Vatrican 2021):
+	
+	
+	\pex\label{ex3}
+	\a\begingl
+	\gla\ljudge{*}Suele haberle visto por el Retiro //
+	\glb \textsc{soler.3sg} have.\textsc{inf-CL} see.\textsc{pfv} at the Retiro //
+	\glft She have see.\textsc{soler} him in the Retiro park//
+	\endgl
+	\a\begingl
+	\gla Puede haberle visto por el Retiro //
+	\glb can.\textsc{imp} have.\textsc{inf-CL} see.\textsc{pfv} at the Retiro //
+	\glft She could have seen him in the Retiro park//
+	\endgl
+	\xe
+	
+	\vspace{-\baselineskip}
+	
+	\subsection{Iteration}\label{iteration}
+	
+	Habitual periphrases with \textit{soler} cannot apply to once-only predicates, as illustrated bellow in (\ref{0}):
+	
+	\pex\label{0}
+	\a\begingl
+	\gla El gorila Maguila vive en libertad//
+	\glb the gorilla Maguila live.\textsc{3sg.ipfv} in freedom//
+	\glft `Maguilla Gorilla lives freely in the wild'//
+	\endgl
+	\a\begingl
+	\gla\ljudge{*}El gorila Maguila suele vivir en libertad//
+	\glb the gorilla Maguila \textsc{soler.3sg} live.\textsc{inf} {} in freedom//
+	\glft Int.: `Maguilla Gorilla live.\textsc{soler} freely in the wild'//
+	\endgl
+	\xe
+	
+	It seems, thus, that to be felicitous \textit{soler} requires a plurality of certain minimal size, be it a plurality of situations/events as illustrated previously in (\ref{ex1a}), or a plurality of individuals, as in (\ref{0-2}) below:
+	
+	
+	\pex\label{0-2}
+	\a\begingl
+	\gla Los gorilas viven en libertad//
+	\glb the gorilas live.\textsc{3pl.ipfv} in freedom//
+	\glft `Gorillas live freely in the wild'//
+	\endgl
+	\a\begingl
+	\gla Los gorilas suelen vivir en libertad//
+	\glb the gorilas \textsc{soler.3pl} live.\textsc{inf} in freedom//
+	\glft `Gorillas live.\textsc{soler} freely in the wild'//
+	\endgl
+	\xe
+
+	\vspace{-\baselineskip}
+	
+	\subsection{Actuality}\label{actuality}
+	
+	Habitual \textit{soler}-statements may only refer to eventualities that have already been realized. For instance, unlike (\ref{1a}) below, (\ref{1b}) cannot describe a situation where the coffee machine is new and was never used before (\cite{Green:2000}). In such a situation, a statement like (\ref{1b}) would come out as false.
+	
+	\pex
+	\a\label{1a}\begingl
+	\gla Esta m{\'a}quina hace un caf{\'e} muy rico//
+	\glb this machine make.\textsc{ipfv} a coffee very tasty//
+	\glft `This machine makes very tasty coffee'//
+	\endgl
+	\a\label{1b}\begingl
+	\gla Esta m{\'a}quina suele hacer un caf{\'e} muy rico//
+	\glb this machine \textsc{soler} make.\textsc{inf} a coffee very tasty//
+	\glft `This machine make.\textsc{soler} very tasty coffee'//
+	\endgl
+	\xe
+
+	\vspace{-\baselineskip}
+	
+	\subsection{Exceptions}\label{exceptions}
+	
+	Generalizations lacking exceptions, including those stating norms, rules, dispositions, uninterrumped states (like e.g. \textit{be a bachelor}), etc. are not describable by means of \textit{soler}, (\ref{2}). 
+	
+	
+	\pex\label{2}
+	\a\label{2a}\begingl
+	\gla El sol sale por el este//
+	\glb the sun come.out-\textsc{ipfv} by the east//
+	\glft `The sun rises in the East'//
+	\endgl
+	\a\label{2b}\begingl
+	\gla\ljudge{\#}El sol suele salir por el este //
+	\glb the sun \textsc{soler} come.out.\textsc{inf} by the east //
+	\endgl
+	\xe
+	
+	
+	However, rather than false, such expressions simply result in infelicity or oddness: one could use (\ref{2b}) to achieve a certain effect, for instance as a joke, within a poetic narrative, etc. Crucially, however, in those instances the normative, dispositional or deontic (circumstantial) flavor of the unmarked \textit{soler}-less counterpart in (\ref{2}a) is lost. 
+
+
+	
+	\section{Proposal}
+	
+	In what follows we outline a first formal analysis that aims at capturing the properties of \textit{soler} reported above. We begin first by proposing a baseline analysis for the bare habitual interpretation of imperfective forms in Spanish.
+	
+	\subsection{Bare habitual}
+	
+	Assuming that tense heads are assignment dependent temporal pronouns directly denoting time intervals, I follow much earlier work (\cite{Deo:2009}, \cite{ArregiEtAl:2014}, \cite{Ferreira:2016}) in giving habitual interpretations of bare sentences a modal treatment. The modal base is a function from world-time pairs to a set of (ordered) worlds (\cite{Kratzer:1981}, \cite{Kratzer:1991a}), in this case constituted by a set of gnomic alternatives to world $w$ at time $t$, where the ``dispositions'', ``propensities'' and ``habits'' are as in $w$ at $t$ (\cite{Boneh&Doron:2008}). 
+	
+	In order to compositionally build the intended habitual meaning of Spanish imperfective forms, I assume that in present tense Spanish has a null imperfective morpheme $\emptyset_{\textsc{impfv}}$. 
+	
+	\ex
+	$\llbracket\emptyset_{\textsc{impfv}}\rrbracket^{w,t,g} = \lambda P_{\langle s,\langle \epsilon,t\rangle\rangle}.\lambda t' .\forall w' \in MB_{w}^{t} . \exists e [^{*}\hspace{-.05cm}P(w',e) \wedge t' \subseteq T(e)]$
+	\xe
+	
+	This morpheme states that every accessible world $w'$ is s.t. the plurality of eventualities $^{*}\hspace{-.05cm}P$ contains $t'$, the time of the eventualities at $w'$. We  analyze (\ref{ex1a}) as in (\ref{den1}). 
+	
+	\ex\label{den1}$\llbracket$(\ref{ex1a})$\rrbracket =$ T \textit{iff} $\forall w' \in \textnormal{MB}_{w}^{g(i)} . \exists e [g(i) \subseteq T(e) \wedge \textit{smoke'}_{w'}(e) \wedge Ag_{w'}(e) = \textit{Juan'}]$
+	\xe 
+	
+	Note that the evaluation world need not be one where $e$ holds, and thus the non-actualization of (\ref{1a}) is successfully accounted for. 
+	
+	
+	\subsection{The building blocks of \textit{soler}}
+	
+	Our account rests on two main pieces. First, we propose that \textit{soler} habituality is a notion that rests on event iteration, as proposed for habituality at large by e.g. \textcite{Vlach:1993}, \textcite{Boneh&Doron:2008, Doron&Boneh:2013}.\footnote{We do not commit ourselves to reducing habituality at large to event iteration; our claims are in this sense limited to \textit{soler}.} Thus, this is first and foremost the key component of \textit{soler}'s semantic contribution: \textit{soler} holds of a plural eventuality $e$ that is equal to the supremum of its propert parts $e'$ (see e.g., \cite{Kratzer:2008}). 
+	
+	By expressing this requirement via Link's $\sigma$-operator (\cite{Link:1983}), we introduce the necessary existence of a plurality of such $e'$ sub-eventualities: 
+	
+	\ex\label{den2}$\llbracket$V \textit{soler}$\rrbracket^{w,g,t} = \lambda t' . \exists e [P_w(e) \wedge T(e) \subset t' \wedge e = \sigma e'[P_w(e') \wedge e' < e]]]$\xe
+	
+	As expressed in (\ref{den2}), \textit{soler} together with perfective aspect simply requires thus iterative eventualities within a topical time, (\ref{den2}). 
+	
+	This reliance on pluralities has two main positive consequences. First, it effectively bans once-only predicates from \textit{soler}-constructions, as desired (see \S\ref{iteration} above). Moreover, a crucial component of regarding \textit{soler} statements as merely relying on pluralities is that, all else equal, they lack any modal quantification. As a consequence events must be checked with respect to the evaluation world, accounting for \textit{soler}'s restriction to realized eventualities (see \S\ref{actuality} above). 
+	
+	The second main ingredient of our proposal for \textit{soler} is that not having any quantificational strength of its own, \textit{soler} habituals are quantificationally dependent. As a consequence, they be bound (understood syntactically in terms of c-command) by some quantificational expression, overt or covert (see e.g. \cite{Chierchia:1995}). 
+	
+	In particular, we follow Cable's (\cite{Cable:2022}) account of habitual morphology in Tinglit, whereby quantificational adverbs quantify strictly over times in the actual world. The semantic role of such adverbial quantifiers is to determine how often (via quantification) and during what time spans (through their associated contextual restriction) \textit{soler} habitualities occur. For a sentence like (\ref{den3-a}), assuming an interpretation of the quantificational expression \textit{every Sunday} as in (\ref{den3-b}), we obtain the semantic interpretation in (\ref{den3-c}):
+	
+	\pex\label{den3}
+	\a\label{den3-a}\begingl
+	\gla Suelen ir al f{\'u}tbol todos los domingos   //
+	\glb \textsc{soler} go.\textsc{inf} to soccer every the Sunday//
+	\glft `They go to a soccer game every Sunday'//
+	\endgl
+	\a\label{den3-b}$\llbracket$every Sunday$\rrbracket^{w,t,g} = \lambda P_{\langle i,t\rangle} . \forall t' [\textit{Sunday}(t') \wedge t' \in C_t \rightarrow P(t')]$
+	\xe
+	\ex\label{den3-c}$\forall t'[\textit{Sunday}(t') \wedge t' \in C_t$
+	
+	{}\hspace{1cm}$\rightarrow \exists e [ T(e) \subset t' \ \wedge \ \textit{go-soccer'}_w(e) \wedge \ e =  \sigma e'[\textit{go-soccer'}_w(e') \wedge e' < e]]]$
+	\xe
+	
+	We can see that \textit{soler} + INF habitual periphrases are indeed quantificationally dependent and that they do not introduce quantificational force by themselves by looking into various other quantificational expressions: \textit{soler} statements are compatible with quantificational adverbs of any force, and thus they simply convey iteration over the time frame set by external quantifiers.
+	
+	\ex\label{den3-2}
+	\begingl
+	\gla \textnormal{\{} Siempre / Casi nunca / A veces \textnormal{\}} suelen ir al f{\'u}tbol los domingos   //
+	\glb {} always {} almost never {} \textsc{soler} go.\textsc{inf} to soccer every the Sunday//
+	\glft `They \{always / almost never / sometimes\} go to a soccer game on Sundays (as a matter of habit)'//
+	\endgl
+	\xe		
+	
+	\vspace{-\baselineskip}
+	
+	\section{Discussion}
+	
+	The proposal sketched above accounts for the fact that \textit{soler} habitual statements $(i)$ are obligatorily habitual, and $(ii)$ convey a plurality of events that $(iii)$ must be actualized in the evaluation world. But nothing so far rules out \textit{soler} habituals in generalizations that are known to have no exceptions (like rules, norms, dispositions, etc.). Our hunch is that such incompatibilities are eminently \textit{pragmatic}, since $(i)$ they lead to oddness as opposed to ungrammaticality and $(ii)$ can be exploited in certain contexts to obtein certain pragmatic effects.
+	
+	We suggest that \textit{soler} habitual constructions are odd whenever their corresponding bare imperfective counterpart expresses a  ``rule-based'' (in the sense of \cite{Carlson:1995}) or ``definitional'' (in the sense of \cite{Krifka:2013}) generic statement.\footnote{These type of generic statement bear some resemblance too to the``in virtue of'' generic statements in \textcite{Greenberg:2003}.} Such rule-based generic statements are eminently modal, they uncontroversially convey strong (universal) modal interpretations, and are thus true in all accessible worlds.
+	
+	\pex 
+	\a Bishops move diagonally. \hfill \textit{game rules}
+	\a Tab A fits in slot B. \hfill \textit{operating instructions}
+	\a The Vice-President succeeds the President. \hfill \textit{parliamentary rules}
+	\xe
+	
+	Instead, \textit{soler} habituals depend on their associated quantificational adverb to determine the strength of their statement. Even in cases where they combine with adverbs such as \textit{always} (see e.g. (\ref{den3-a}) and (\ref{den3-2})), these are further contextually restricted, and thus never seldom hold at absolutely all times/situations mandated by the universal quantificational expression at hand in each case.
+	
+	
+	We suggest that a pragmatically driven strengthening process involving competition between more informative alternatives (for instance along the lines proposed by \cite{Magri:2009}) may account for this oddness. The price to pay for such kind of solution is that it requires competition between ``bare'' imperfective forms and \textit{soler} + INF constructions; in other works, the it requires bare habituals to be semantically stronger---i.e. more informative, understood as true in lesser situations/worlds---than \textit{soler} habituals. The advantage os such proposals is that they allow the context to determine whether such stronger alternatives are relevant on a case by case basis with respect to pragmatic competition. For instance, while (\ref{dog-a}) may be the default choice of a speaker wanting to describe what's most usual or the norm, a \textit{soler} statement like (\ref{dog-b}) is more apt if the speaker is intending to highlight that, indeed, exceptions to the norm do exist.
+	
+	
+	\pex\label{dog}
+	\a\label{dog-a}\begingl
+	\gla Los perros tienen cuatro patas//
+	\glb the dogs have.\textsc{ipfv} four legs//
+	\glft `Dogs have four legs'//
+	\endgl
+	\a\label{dog-b}\begingl
+	\gla Los perros suelen tener cuatro patas//
+	\glb the dogs \textsc{soler.3pl} have.\textsc{inf} four legs//
+	\glft `Dogs (typically) have four legs'//
+	\endgl
+	\xe
+	
+	In contrast, \textit{soler} statements that are known to have no counter-examples whatsoever are more difficult to rescue, if possible at all, by means of contextual manipulations of the sort described above, since no exceptions may be highlighted.
+	
+	\pex\label{earth}
+	\a\begingl
+	\gla La tierra da una vuelta alrededor del sol todos los a{\~n}os//
+	\glb the earth give a turn around of-the sun all the years//
+	\glft `Every year Earth revolves once around the sun'//
+	\endgl
+	\a\begingl
+	\gla\ljudge{\#}La tierra suele dar una vuelta alrededor del sol todos los a{\~n}os//
+	\glb the earth give a turn to-the sun all the years//
+	\glft Int.: `(Typically) every year Earth revolves once around the sun'//
+	\endgl
+	\xe
+	
+	\pex\label{chess}
+	\a\begingl
+	\gla En ajedrez los alfiles se mueven en diagonal.//
+	\glb In chess the bishops \textsc{refl} move in diagonal//
+	\glft `In chess bishops move diagonally.'//
+	\endgl
+	\a\begingl
+	\gla\ljudge{\#}En ajedrez los alfiles se suelen mover en diagonal.//
+	\glb In chess bishops \textsc{refl} \textsc{soler.3pl} move.\textsc{inf} in diagonal//
+	\glft Int.: (Typically) in chess bishops move diagonally.'//
+	\endgl
+	\xe
+	
+	If highlighting the presence of an exception to certain rule is what drives the use of a \textit{soler} habitual statement over its bare imperfective counterpart, the contrasts between the pairs in (\ref{earth}) and (\ref{chess}) above follows. 
+	
+	
+	%\imsubsection{Specifying options}\label{sub:ex}
+	%\section{Citing other work}\label{sec:bib}
+	%Here are examples of in-text citations: \textcite{Yuan2021} and \textcite{EKiss2008}. The bibliography file is specified by the \verb+\addbibresource{...}+ command in the preamble of a document. In the current file, this looks as follows:
+	\printbibliography
+\end{document}
