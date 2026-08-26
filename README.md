@@ -1,39 +1,5 @@
 This repository contains my published work in linguistics. It may occassionally include talks, manuscripts and related research materials.
 
-## Directory structure
-
-```text
-publications/
-│
-├── README.md
-├── CITATION.cff
-├── LICENSE
-├── .gitignore
-│
-├── bibliography/
-│   ├── bibliography.bib
-│   └── bibliography.json
-│
-├── papers/
-│   │
-│   ├── 2026/
-│   │   ├── paper 1/
-│   │   │   ├── README.md
-│   │   │   ├── metadata.yaml
-│   │   │   ├── paper.pdf
-│   │   │   └── source/
-│   │   │       └── paper.tex
-│   │   │
-│   │   └── .../
-│   │
-│   └── .../
-│
-└── talks/
-    ├── README.md
-    ├── talk1.pdf
-    └── ...
-```
-
 ## Papers
 
 ### 2026
@@ -91,3 +57,39 @@ ORCID: https://orcid.org/0000-0003-0153-164X
 Unless otherwise indicated, metadata, documentation, and original repository materials are licensed under CC BY 4.0.
 
 Individual publications retain the copyright and licensing terms specified by their respective publishers.
+
+
+## Directory structure
+
+```text
+publications/
+│
+├── README.md
+├── CITATION.cff
+├── LICENSE
+├── .gitignore
+│
+├── bibliography/
+│   ├── bibliography.bib
+│   └── bibliography.json
+│
+├── papers/
+│   │
+│   ├── 2026/
+│   │   ├── paper 1/
+│   │   │   ├── README.md
+│   │   │   ├── metadata.yaml
+│   │   │   ├── paper.pdf
+│   │   │   └── source/
+│   │   │       └── paper.tex
+│   │   │
+│   │   └── .../
+│   │
+│   └── .../
+│
+└── talks/
+    ├── README.md
+    ├── talk1.pdf
+    └── ...
+```
+
