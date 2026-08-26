@@ -51,6 +51,10 @@ publications/
 
 - [When subjects do not agree: a semantic perspective](papers/2024/semantic-subject-agreement/)
 
+### 2022
+
+- [Pragmatic filtering and presupposition projection](papers/2022/filtering-presupposition-projection/)
+
 ## Talks
 
 See [`talks/`](talks/).
