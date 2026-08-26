@@ -28,7 +28,7 @@ publications/
 │   │
 │   └── .../
 │
-├── talks/
+└── talks/
     ├── README.md
     ├── talk1.pdf
     └── ...
