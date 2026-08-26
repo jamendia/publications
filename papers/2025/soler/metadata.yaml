@@ -39,7 +39,7 @@ keywords:
 
 files:
   paper: "mendia2025b.pdf"
-#  source: "source/mendia2025b.tex"
+  source: "source/mendia2025b.tex"
 
 links:
   doi: "https://www.lingref.com/cpp/wccfl/41/abstract3776.html"
