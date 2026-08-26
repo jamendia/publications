@@ -6,11 +6,11 @@ Links point directly to `pdf` files. You can find more about my research on [my 
 
 - A grammatical recipe for kind construction. [Slides](files/uab2024-slides.pdf).
 
-- Domain restrictions in Bangla concealed questions (with [Diti Bhadra](https://www.ditibhadra.com/). [Slides](files/bhadra&mendia-lsa.pdf).
+- Domain restrictions in Bangla concealed questions (with [Diti Bhadra](https://www.ditibhadra.com/)). [Slides](files/bhadra&mendia-lsa.pdf).
 
 - Generics and Grammar. [Handout](files/generics-rev.pdf).
 
-- Genericity and epistemic commitments (with [Hana Filip](https://hanafilip.com/). [Slides](files/mendia&filip-spe.pdf).
+- Genericity and epistemic commitments (with [Hana Filip](https://hanafilip.com/)). [Slides](files/mendia&filip-spe.pdf).
 
 
 ## License
