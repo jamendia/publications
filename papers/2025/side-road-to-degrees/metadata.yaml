@@ -1,0 +1,42 @@
+id: 2025sideroad
+type: article
+
+title: "A side road to degrees"
+
+authors:
+  - given: "Jon Ander"
+    family: "Mendia"
+
+year: 2025
+
+status: published
+
+publication:
+  type: book-chapter
+  book: "Generative Perspectives on Degrees: The Semantics and Morphosyntax of Scalarity"
+  chapter: "10"
+  pages: "351-380"
+  publisher: "De Gruyter Mouton"
+
+identifiers:
+  doi: "10.1515/9783111547688-013"
+
+topics:
+  - degree semantics
+  - kinds
+
+languages:
+  - English
+
+keywords:
+  - degrees
+  - kinds
+  - amount relatives
+  - equatives
+
+files:
+  paper: "mendia2025.pdf"
+#  source: "source/paper.tex"
+
+links:
+  web: "https://www.degruyterbrill.com/document/doi/10.1515/9783111547688-013"
