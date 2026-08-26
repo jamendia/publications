@@ -1,0 +1,489 @@
+%!TEX TS-program = pdflatex
+\documentclass[a4paper,12pt,twoside]{article}
+
+\usepackage{mathptmx}
+\usepackage{stmaryrd}
+\usepackage{amssymb}
+\usepackage{parskip}
+\usepackage[top=1.5in,left=1in,right=1in,bottom=1in]{geometry}
+%\setlength{\parindent}{0pt}
+%\setlength{\parskip}{\the\baselineskip}
+\pagestyle{empty} 
+
+\makeatletter
+\renewcommand\@makefntext[1]{%
+	\parindent 1em\noindent
+	\hbox{\@makefnmark}#1}
+\renewcommand\large{\@setfontsize\large{14pt}{18}} % For standardizing with the Word template: normally \large is 14.4pt
+\makeatother
+\usepackage{titlesec}
+\titleformat{\subsection}{\normalfont\normalsize}{\thesubsection.}{1ex}{}
+\titleformat{\subsubsection}{\normalfont\normalsize}{\thesubsubsection.}{1ex}{}
+\titleformat{\section}{\normalfont\normalsize\bfseries}{\thesection.}{1ex}{}
+\titlespacing*{\section}{0pt}{24pt}{0pt}
+\titlespacing*{\subsection}{0pt}{\the\baselineskip}{0pt}
+
+\usepackage{natbib} 
+\bibpunct{(}{)}{;}{a}{,}{,}
+
+
+\setlength{\bibsep}{0pt} \relax
+\setcitestyle{notesep={: },yysep={, }} \relax
+
+\usepackage{linguex,url}
+\def\refdash{} % To suppress the dash in (2-a) etc. Defining both as different versions of linguex had different names for this command.
+\def\firstrefdash{}
+
+
+\usepackage{titleps}
+\usepackage{lipsum}
+\newpagestyle{mystyle}{
+	\sethead[\thepage][\Author][]{}{\Title}{\thepage}
+}
+\pagestyle{mystyle}
+\author{Jon Ander Mendia \and Stephanie Solt}
+\title{Amounts vs. degrees}
+\makeatletter
+\newcommand\Author{Mendia---Solt}
+\let\Title\@title
+\makeatother
+%header with author and title
+
+\pagenumbering{gobble} 
+%suppresses page numbering in header
+
+% custom
+\usepackage{xcolor}
+\newcommand{\sv}[1]{\ensuremath{\llbracket\textnormal{#1}\rrbracket}}
+\newcommand{\red}[1]{\textcolor{red}{\sffamily#1}}
+\newcommand{\posscitet}[1]{\citeauthor{#1}'s (\citeyear{#1})}
+%
+
+\usepackage{enumitem}
+\setlist[itemize]{leftmargin=0mm}
+
+
+\begin{document}
+	%%\maketitle
+	\setlength{\Extopsep}{0pt}
+	\thispagestyle{empty}
+	
+	{\large \textbf{On the distinction between amounts and degrees}}\footnote{For their helpful input, we would like to thank the audiences at SPE12, TbiLLC 2023, SuB29, and at the ZAS, Osaka University and UPV/EHU colloquiums and seminars where versions of this work have been presented.}\\
+	Jon Ander MENDIA --- \textit{UPV/EHU \& Ikerbasque}\\
+	Stephanie  SOLT --- \textit{Leibniz-Centre General Linguistics (ZAS)}\\
+	
+	\textbf{Abstract.} This paper investigates copular constructions such as \textit{Five dogs is too many pets} and \textit{Ten kilos of broccoli is too much food}, in which a property is seemingly ascribed to an amount or quantity. We argue that the subject noun phrases in such examples do in fact denote an amount---construed as the entity correlate of a quantized property---and that amount predication is a form of predication in its own right. We further demonstrate, on the basis of a range of distributional and interpretative patterns, that amounts are distinct from degrees; that is, the place of amounts in semantic theory is not \textit{in lieu of} but rather in addition to degrees. %We thus argue against recent proposals to align degrees more generally to kinds.
+	
+	\textbf{Keywords:} Measurement, quantity, amount, degree, kind, nominalization 
+	
+	%\vspace{24pt}
+	\section{Introduction}
+	
+	The expression  of quantity and degree is a topic of long-standing interest in formal semantics, but there is as yet no full consensus as to what sort of entities are denoted by measure expressions of various sorts. In this work, we approach this topic from the perspective of a little-studied variety of copular construction in which a property is seemingly predicated of an amount or quantity. The examples of interest can be most readily identified on the basis of a non-canonical pattern of agreement, but it is the interpretative correlate of this syntactic pattern that we will argue yields insights into the semantics of measurement. 
+	
+	By way of example, consider the pair of sentences in \Next, which share the subject \textit{five dogs}, but which differ in the singular vs.\ plural form of the copula. \Next[a]  displays an ordinary agreement pattern; semantically, it  represents the unsurprising run-of-the-mill case whereby a certain entity---say, some  specific plurality of five dogs---is claimed to possess a certain quality---namely, to be barking. The noun phrase in such sentences thus has the  ordinary \textsc{individual interpretation}. In contrast, the same phrase in \Next[b] occurs with singular agreement. Here, the sentence does not express a claim about any five specific dogs; instead, under the \textsc{amount interpretation} characterizing \Next[b], the noun phrase \textit{five dogs} now seems to denote some quantity or amount of dogs.
+	
+	\ex.\label{dog}
+	\a.\label{dog:a}Five dogs \textbf{are} barking. \hfill \textit{individual}
+	\b.\label{dog:b}Five dogs \textbf{is} too many pets. \hfill \textit{amount}
+	
+	Similar observations hold of a variety of noun phrases, such as the pseudo-partitive construction below: \textit{ten kilos of broccoli} picks out a specific bunch of broccoli in \Next[a] that just happens to sit in a box, whereas in \Next[b], there need not be any particular portion of broccoli whose properties are described; rather, it is 10 kilos as an amount of broccoli that is characterized as being too much food.
+	
+	\ex.\label{broccoli}
+	\a.\label{broccoli:a}Ten kilos of broccoli \textbf{are} in the box. \hfill \textit{individual}
+	\b.\label{broccoli:b}Ten kilos of broccoli \textbf{is} too much food. \hfill \textit{amount}
+	
+	Typical semantic analyses of \LLast[a] and \Last[a] involve some form of reference to or quantification over individuals, following our intuition that they constitute statements \textit{about} individual entities---such as individual pluralities of dogs or  portions of broccoli. We take this much to be uncontroversial. The main focus of our paper is on the second, amount interpretations in \LLast[b]/\Last[b]. In particular, we ask: what do the surface-identical subjects in the (b) examples above denote? That is, if common semantic frameworks resort to $e$-type objects to represent individual entities, would the (b) cases require entities beyond the $e$-domain and, if so, of what sort?\footnote{
+		These are not the only cases where a seeming lack of agreement between subject and predicate signal some sort of semantic shift in interpretation. Most notably, pseudo-partitive constructions involving measure nouns such as \textit{bunch}, \textit{cup}, etc. have been argued to provide either ``individual'' or ``measure'' interpretations which, to some extent, are tracked by different grammatical agreement patterns (see especially \citealt{Rothstein:2009,Rothstein:2016,Rothstein:2017}). Later in Section \ref{sec:discussion} we briefly discuss the similarities and differences between such measure interpretations and our amount interpretations in \ref{dog:b}/\ref{broccoli:b}. (See also \citet{Mendia&Espinal:2024b} for a discussion of the differences between the contrasts in \ref{dog}/\ref{broccoli} and other constructions where non-standard agreement patterns show semantic effects, such as so-called Pancake Sentences (\citealt{Enger:2004}, \citealt{Wechsler:2011}) or Topic Categorical Sentences (\citealt{Britto:2000}).)
+	} 
+	
+	A natural response to these questions involves capitalizing on the presence of the quantity words \textit{many} and \textit{much} in the examples illustrating the amount interpretations  \LLast[b]/\Last[b]: as the examples below show, their absence does not just lead to the lack of an amount interpretation, but results instead in oddity, especially in the count noun case.
+	
+	\ex.
+	\a.*\label{with_many}Five dogs is pets.
+	\b.??\label{with_much}Ten kilos of broccoli is food.	
+	
+	It is thus tempting  to reduce the amount interpretations of \ref{dog:b}/\ref{broccoli:b} to some form of  degree predicative structure, thereby treating the subjects \textit{five dogs} and \textit{ten kilos of broccoli} as degree-denoting, and hence represented as type $d$ objects in the metalanguage.%
+	
+	This is indeed the main response offered by previous literature, which, although scarce, offers two different versions of this line of reasoning. \citet{Rett:2014,Rett:2018} provides what we could refer to as an \textsc{extensional} approach, where the denotations of the subjects involved in amount interpretations similar to those in \ref{dog:b}/\ref{broccoli:b} are the result of performing measurement operations over individuals (e.g.\ \textit{dogs}) or sets of degrees (e.g.\ cardinalities of dogs); see \Next[a]. But observe that the logical form in \Next[a] expresses a commitment to the existence of four pizzas in the context, and furthermore predicates the property of being enough to the simple degree of cardinality $4$, whereas intuitively, it is 4 as a number  of pizzas that is characterized as enough. In a more recent proposal that partially resolves these issues, \citet{Mendia&Espinal:2024a} offer instead an \textsc{intensional} approach, which differs mainly in that the relevant measurement operations are not performed over ordinary entities or degrees, but over entity correlates of properties of individuals, as \Next[b] shows. 
+	
+	\ex.
+	\a.\textsc{Extensional}: \\
+	\sv{\textnormal{4 pizzas is enough}} = $\mu_{\textsc{dim}}(\lambda d . \exists x [\textit{pizzas}(x) \wedge |x| = d]) = 4 \wedge \textit{enough}(4)$\\
+	\textit{The set of
+		degrees $d$ corresponding to the quantities of pizzas in the context measures 4, and 4 counts as enough in the
+		context}.
+        \newpage
+	\b.\label{intensional}\textsc{Intensional}:\\
+	\sv{\textnormal{Five dogs is too many pets}} = $\mu_{\textsc{dim}}(^{\downarrow}(\lambda x . \textit{dogs}(x) \wedge |x| = 5)) \geq \textit{too-many-pets}_c$\\
+	\textit{The result of measuring the entity correlate of the property \textit{five dogs} exceeds some pet-quantity threshold}.
+	
+	Despite improving on the extentional account, logical forms such as \Last[b] remain obscure regarding the sort of entity correlates that allow amount interpretations such as \ref{dog:b}/\ref{broccoli:b}, nor do they provide much insight about what it might mean to measure such intensional objects. 
+	
+	Regardless of their differences, the two accounts follow the same explanation pattern alluded to above: since amount interpretations are only possible in the presence of words with arguably  degree-based semantics \citep{Rett:2008,Solt:2015}, a (type $d$) degree must be extracted out of the subject noun phrase so as to avoid a sortal mismatch. Barring details about how each proposal executes this plan, the two accounts appeal to measurement operations in order to achieve this result and effectively turn sentences \ref{dog:b}/\ref{broccoli:b} into instances of \textsc{degree predication}.
+	
+	This paper makes two main claims. First, we closely inspect the amount interpretations in \ref{dog:b}/\ref{broccoli:b} and argue that they are not reducible to degree predication. We provide a series of new observations regarding the distribution and overall semantic behavior of amount interpretations and, on the basis of this wider range of data, conclude that ``ordinary'' degrees do not provide the right kind of semantic object to cover this new empirical landscape. Instead, we propose that the amount interpretations in \ref{dog:b}/\ref{broccoli:b} involve a new, hitherto unnoticed sort of predication, which we refer to as \textsc{amount predication}.
+	
+	There are two main differences between our \textsc{amounts} and ordinary \textsc{degrees}, as they are currently understood in the degree-semantic literature (following e.g. \citealt{vonStechow:1984, Heim:1985, Kennedy:1999}, a.o.). A prevailing view on degrees treats them as primitive, abstract objects that exist independently of individual entities. They are \textbf{simple}, atomic entities, lacking therefore any further structure or parts whatsoever within themselves. Sets of such degrees may be organized on scales, tuples $S = \langle D, R, \triangle \rangle$ consisting of a set of degrees $D$, an ordering relation $R$ and some dimension $\triangle$, such that individuals may be mapped to degrees by means of measure functions $\mu_S$; e.g. for some entity $x$ and scale $S$, $\mu_S(x)$ corresponds to the exact degree $d$ that represents $x$'s measure on   dimension  $\triangle$. Because they are primitive and atomic entities, degrees on this view are therefore \textbf{opaque}, in the sense that they carry no information about the individuals whose measurement they represent. Another view \citep{Cresswell:1977, Klein:1980, Klein:1991, Bale:2008} holds that degrees are derivative of individuals, being equivalence classes under some ordering, such as the relation `weighs at least as much as'. While degrees on this view are more complex entities than on the alternative degree-as-abstraction view, they remain opaque, in the sense that they do not make distinctions between sorts of individuals whose measures they  may represent (e.g.\ between portions of broccoli and of rocks of equal weight).%
+	\footnote{
+		There exist  other conceptualizations of degree that do not treat them as simple but somewhat more complex objects, such as scalar intervals (\citealt{Kennedy:2001}, \citealt{Schwarzschild&Wilkinson:2002}) or directed segments (\citealt{Schwarzschild:2012, Schwarzschild:2020}), but despite these augmentations degrees remain opaque still, and thus our argument is unaffected by these distinctions. 
+	} %
+	
+	Our amounts differ from degrees in that they are neither simple nor opaque. As in the degree-as-equivalence class view, we treat amounts as derivative of individuals, in the sense that there cannot be amounts without individuals.  As a consequence, amounts constitute \textbf{complex} objects that cannot be simply represented as points on a scale. However, we do not treat amounts as arising from a comparison between individuals; instead, we take inspiration from \posscitet{Scontras:2017} account of degrees and treat amounts as nominalizations of quantity uniform properties (cf. \citealt{Mendia&Espinal:2024a}). This move effectively provides amounts the ability to track information about what an amount is an amount of, thereby turning them \textbf{transparent} in a way that degrees are not.
+	
+	The second main claim in this paper is that by adopting amounts we need not---and in fact must not---relinquish degrees: the place of amounts in semantic theory is not \textit{in lieu} of but in addition to degrees. Treating amounts as nominalizations, we bring them closer to recent proposals that seek to exploit a series of cross-linguistic analogies between expressions denoting kinds, manners and degrees, and thereby argue that degrees actually \textit{are} kinds (see e.g. \citealt{Landman&Morzycki:2003}, \citealt{Anderson&Morzycki:2015}, \citealt{Scontras:2017}).  A close inspection of amount interpretations such as those in \ref{dog:b}/\ref{broccoli:b} above does not support such a reductionist view however. Instead, we develop a view on which simple degrees and amounts coexist, and in fact, amount interpretations are built on top of more basic degree interpretations. Thus, schematically, the subject noun phrases in \ref{dog:b}/\ref{broccoli:b} have the following structure: 
+	
+	\ex. 
+	\a. $\underbrace{\overbrace{\textsc{five}}^{\small \textit{degree}}\textsc{ dogs}}_{\small \textit{amount}}$	\qquad\qquad\qquad b. \hspace{.2cm} $\underbrace{\overbrace{\textsc{ten kilos}}^{\textit{\small degree}}\textsc{ of broccoli}}_\textit{\small amount}$
+	
+	The rest of the paper is organized as follows: Section 2 lays out the case for a distinction between amounts and degrees, by demonstrating a wide range of distributional differences between amount- and degree-denoting expressions. Section 3 develops a compositional analysis of amount interpretations, based on a nominalization operator and a revised semantics for \textit{many/much}. Section 4 returns to the relationship between amounts and degrees, and Section 5 concludes. 
+	
+	
+	\section{Amounts vs. Degrees}\label{sec:data}
+	
+	There are a number of distributional differences between ``ordinary'' degrees and our amounts that provide good empirical arguments in favor of their distinct nature. In this section we discuss some such differences. To assist our exposition, in what follows we will make the somewhat simplifying assumption that cardinal numerals as well as measure phrases like \textit{six meters}, \textit{ten kilos}, and \textit{twenty degrees} stand for names of degrees, and thus elements of type $d$ in the metalanguage.%
+	   \footnote{%
+       This assumption is simplifying in that bare numerals such as \textit{four} in \ref{dog} and measure phrases such as \textit{ten kilos} in \ref{broccoli} behave differently from each other. In particular, while measure phrases have typically been taken to provide proper names of degrees, there is no such clear consensus in the literature on the role that degrees may play in the interpretation and composition of bare numerals (for recent discussion, see \citealt{Bylinina&Nouwen:2020}).
+	} 
+	These constitute prototypical degree-denoting expressions that we will use to benchmark the grammatical properties of potentially amount-denoting expressions, such as those in \ref{dog:b}/\ref{broccoli:b} above.
+	
+	Our starting observation has to do with the greater flexibility of amounts \textit{vis-à-vis} degrees with respect to the sorts of predicates they may combine with. On the one hand, amounts, like degrees, are perfectly capable of combining with predicates that describe properties of measures. For instance:
+	
+	\ex.\label{data1}
+	\a.\label{data1:a}[Six meters]$_d$ is too long.
+	\b.\label{data1:b}[Twenty degrees]$_d$ is not hot enough.
+	\c.\label{data1:c}[Five dogs]$_a$ is too many pets.
+	\d.\label{data1:d}[Ten kilos of broccoli]$_a$ is too much food.
+	
+	However, only phrases capable of expressing amounts, such as \textit{ten kilos of broccoli} and \textit{five dogs} in \ref{dog:b}/\ref{broccoli:b} and \ref{data1:c}/\ref{data1:d} may also combine with predicates that semantically select for individuals. For instance,  the examples below may only be interpreted elliptically: a ten kilo measure cannot be said to be sitting in the box by means of \Next[a], just like the number five itself cannot be barking, as suggested by \Next[b].
+	
+	\ex.
+	\a.\#\label{data1:e}Ten kilos are in the box.
+	\b.\#\label{data1:f}Five are barking.
+	
+	The ill-formedness of these examples suggests that degrees cannot  be coerced to ordinary individual-based denotations (e.g.\ type  $e$ or $\langle e,t \rangle$), or perhaps that mappings from degrees to individual entities do not exist. Amounts, on the other hand, are perfectly able to provide semantically fit arguments to predicates of individuals, suggesting in turn that some such mapping between amounts and individual entities may indeed exist.
+	
+	As noted above, in order to obtain the amount interpretation of noun phrases such as \textit{five dogs} or \textit{ten kilos of broccoli} (e.g. \ref{dog:b}/\ref{broccoli:b}, \ref{data1:c}/\ref{data1:d}), it is obligatory that the sentential predicate contains a ``predicate of amount'', i.e.\ a bare or modified form of  \textit{much}, \textit{many}, \textit{few}, \textit{enough}, or a related item, which may be sensibly predicated of amounts, \ref{full-paradigm}. In their absence, amount predication is not possible, \NNext.
+
+	\ex.\label{full-paradigm}
+	\a.\label{data1:g}[Ten kilos of broccoli]$_a$ is
+		$\left\{\begin{array}{ l }
+		\textnormal{too much food.} \\
+		\textnormal{enough food.} \\
+		\textnormal{not much food.} \\
+		\textnormal{$\{$more / less$\}$ food than we need.} \\
+		\textnormal{the $\{$most / least$\}$ food that you can bring.}\\ 
+		\textnormal{as much food as I can handle.} \\			
+		\textnormal{so much food I cannot handle it.} 			
+	\end{array}
+	\right.$
+	\b.\label{data1:h}[Five dogs]$_a$ is
+	$\left\{\begin{array}{ l }
+		\textnormal{too many pets.} \\
+		\textnormal{enough pets.} \\
+		\textnormal{not many pets.} \\
+		\textnormal{$\{$more / fewer$\}$ pets than we have space for.} \\
+		\textnormal{the $\{$most / fewest$\}$ pets we have space for.}\\ 
+		\textnormal{as many pets as I can adopt.} \\			
+		\textnormal{so many pets I cannot adopt them all.} 			
+	\end{array}
+	\right.$
+
+	\ex.
+	\a.\label{data1:i}*[Ten kilos of broccoli]$_a$ is
+	$\left\{\begin{array}{ l }
+		\textnormal{food} \\
+		\textnormal{weight} \\
+		\textnormal{work} \\
+		\textnormal{rotting} 
+	\end{array}
+	\right.$
+	\b.\label{data1:j}*[Five dogs]$_a$ is
+	$\left\{\begin{array}{ l }
+		\textnormal{food} \\
+		\textnormal{weight} \\
+		\textnormal{work} \\
+		\textnormal{barking} 
+	\end{array}
+	\right.$
+
+%	\ex.
+%\a.\label{data1:g}*[Ten kilos of broccoli]$_a$ is
+%$\left\{\begin{array}{ l }
+%	\textnormal{food} \\
+%	\textnormal{weight} \\
+%	\textnormal{work} \\
+%	\textnormal{rotting} 
+%\end{array}
+%\right\}$
+%\b.\label{data1:h}*[Five dogs]$_a$ is
+%$\left\{\begin{array}{ l }
+%	\textnormal{food} \\
+%	\textnormal{weight} \\
+%	\textnormal{work} \\
+%	\textnormal{barking} 
+%\end{array}
+%\right\}$
+
+    
+	A second significant difference between degrees and amounts relates to their different distribution in constructions where degrees directly provide arguments to predicates. One such case involves differentials in comparative constructions, which are widely assumed to be expressed by degrees such as \textit{ten kilos} \citep{vonStechow:1984, Heim:2000}. We expect that if amounts do not express degrees, they may not express differentials in either adjectival or quantity comparatives, which corresponds exactly to the attested pattern:
+	
+		\ex.
+		\a.Box A is [ten kilos]$_d$ heavier than box B.
+		\b.*Box A is [ten kilos of broccoli]$_a$ heavier than box B.
+		
+		\ex. 
+		\a.We have [ten kilos]$_d$ more food than we need.
+		\b.*We have [ten kilos of broccoli]$_a$ more food than we need.
+	
+	If amounts may not provide good differentials in comparatives, it is possible that they may not provide good arguments to gradable predicates in positive contexts---at least under those theories of degree where gradable predicates are analyzed as relating individuals to degrees, often in the form of $\langle d,et\rangle$ functions \citep{Cresswell:1977, Kennedy:1999, Heim:2000}. This means that degrees may be understood as overtly filling in the first argument slot of adjectives. This is not possible with amounts, however, suggesting that the two denote in distinct domains:
+
+	\ex.\label{data2}
+	\a.\label{data2:a}The well is [ten meters]$_d$ deep.
+	\b.*\label{data2:b}The well is [ten meters of rope]$_a$ deep.
+	\c.\label{data2:c}Alex is [two meters]$_d$ tall.
+	\d.*\label{data2:d}Alex is [two meters of cable]$_a$ tall.
+	
+	Similar contrasts extend to other grammatical contexts where degrees may appear on their own. Degrees, for instance, may appear in predicative position of specificational copular clauses in the presence of definite descriptions of measure/quantity; amounts cannot.%
+	\footnote{
+		It is possible to rescue \ref{data3:f} under its additional eliptical construal, with \textit{the number of dogs} in subject position. Here we refer to its (disallowed) bare counterpart.
+	}
+	
+	\ex.\label{data3}
+	\a.\label{data3:a}The weight is [ten kilos]$_d$.
+	\b.*\label{data3:b}The weight is [ten kilos of broccoli]$_a$.
+	\c.\label{data3:c}The length is [two meters]$_d$.
+	\d.*\label{data3:d}The length is [two meters of cable]$_a$.
+	\e.\label{data3:e}The number is [five]$_d$.
+	\f.*\label{data3:f}The number is [five dogs]$_a$.
+	
+	The same is true of measure verbs, which can typically take degrees as arguments, but not amounts:
+	
+	\ex.
+	\a.The suitcase weighs [ten kilos]$_d$.
+	\b.*The suitcase weighs [ten kilos of broccoli]$_a$.
+	\c.The rope measures [two meters]$_d$.
+	\d.*\label{data4:d}The rope measures [two meters of cable]$_a$.
+	
+	The impossibility of amounts to take the place of degrees in argument position extends to DP-internal modifier positions as well: amounts allow neither compounding, \Next[a] nor can they modify any sort of noun \Next[b,c].
+	
+	\ex.\label{data5}\textit{Compounds}
+	\a.A [ten kilo]$_d$ suitcase.
+	\b.*A [ten kilos of broccoli]$_a$ suitcase.
+	
+	\ex.\textit{Modifiers of measure nouns}
+	\a.A weight of [ten kilos]$_d$.
+	\b.*A weight of [ten kilos of broccoli]$_a$.
+	
+	\ex.\textit{Modifiers of common nouns}
+	\a.A carton of [ten kilos]$_d$. 
+	\b.*A carton of [ten kilos of broccoli]$_a$.
+	
+	The distinctions between amounts and degrees are not only distributional, but also semantic in nature. Degrees are typically assumed to be conventionally tied to a single dimension and thus may only form a single scale. Amounts, instead, are not directly linked to a particular  dimension and thus show a greater scalar flexibility. First, notice that just like it happens with degrees, amounts may be ordered with respect to each other, so as to provide the basis for comparison. In the cases in \Next we have two true statements, one with amounts and one with degrees.
+	
+	\ex.\label{data6} 
+	\a.\label{data6:a}[Ten kilos of broccoli]$_a$ is more food than [five kilos of broccoli]$_a$.
+	\b.\label{data6:b}[Ten kilos]$_d$ is heavier than [five kilos]$_d$.
+	
+	However, the greater scalar flexibility characterizing amounts permits comparisons that are not isomorphic to the scales associated with the degrees they contain. For instance, the two statements below express contingent propositions, in that whether they are true or false depends at least in part on the dimension on which we choose to evaluate amounts of food (e.g.\ caloric value, satiating power, etc.; see also \citealt{Mendia&Espinal:2024a}). 
+	
+	\ex.\label{contingent}
+	\a. [[Five]$_d$ pizzas]$_a$ is more food than [[ten]$_d$ sandwiches]$_a$. \hfill \textit{contingent}
+	\b. [[One kilo]$_d$ of chicken]$_a$ is more food than [[two kilos]$_d$ of chips]$_a$. \hfill \textit{contingent}
+	
+	Crucially, for these statements to allow a true reading, the relevant orderings must contradict the underlying degree orderings on the basis of quantity (in \Last[a]) and weight (in \Last[b]), as the false  comparisons in \Next show:
+	
+	\ex.\label{false}
+	\a. [Five]$_d$ is greater than [ten]$_d$. \hfill \textit{false}
+	\b. [One kilo]$_d$ is greater than [two kilos]$_d$. \hfill \textit{false}
+	
+	In fact, we may mix amounts whose underlying degrees belong to two separate dimensions altogether, e.g. quantity and weight:
+	
+	\ex. [[Five]$_d$ pizzas]$_a$ is more food than [[two kilos]$_d$ of broccoli]$_a$.
+	
+	Although not conventionally associated with a scale, amounts are nevertheless limited by the extra information they carry. Concretely, we observe that amount predications require that the nominal in the predicate position can be sensibly predicated of instances of the amount in subject position. Take \ref{data9}, for instance: while the (a) example is acceptable, the (b) example is odd, because it implies that rocks are a type of food. Put differently, the contrast between \ref{data9:a} and \ref{data9:b} suggests that while amounts of broccoli may count as possible measures of food, amounts of  rocks cannot.
+	
+	\ex.\label{data9} 
+	\a.\label{data9:a}Ten kilos of broccoli is too much food.
+	\b.\#\label{data9:b}Ten kilos of rocks is too much food.
+	
+	This strongly suggests that whatever our take on what the semantic value of \textit{ten kilos of broccoli} might be in \ref{data9:a}, it cannot be identical to that of \textit{ten kilos of rocks}. This is despite the fact that they both have the same underlying measure of weight. The culprit is to be found in the combination of their scalar flexibility---as we mentioned above---and the fact that amounts carry information about what they are an amount of. Thus, although \textit{ten kilos of broccoli} does express a measure of a portion of broccoli, as a whole it provides an amount of food, and not an amount of weight.%
+		\footnote{%
+			Notice that both amounts \textit{ten kilos of broccoli} and \textit{ten kilos of rocks} are nevertheless equally capable of providing an amount of weight. Thus, switching from a scale grounded on some food-related values to the more conventional weight scale, the two examples in \ref{data9} become acceptable:
+			
+			\ex.
+			\a.\label{data9:c}Ten kilos of broccoli is too much weight.
+			\b.\label{data9:d}Ten kilos of rocks is too much weight.
+			
+			We take this to suggest that a 10kg measure of broccoli provides an amount of weight equal to a 10kg measure of rocks, even though the two differ if the context switches to a less conventional scale related to food. Schematically: 
+			
+			\ex.
+			\a.\sv{10kg of broccoli}$^{a}_{\textit{food}} \neq $ \sv{10kg of rocks}$^{a}_{\textit{food}}$
+			\b.\sv{10kg of broccoli}$^{a}_{\textit{weight}} =$ \sv{10kg of rocks}$^{a}_{\textit{weight}}$
+			
+			A full semantic account of these facts requires however a full account of property nominals such as \textit{weight}, and we will not attempt to do so here.
+        } 
+	%
+	In fact, such semantic selectional restrictions are quite pervasive, and they show the classic projective pattern of presuppositional content. 
+	
+	\ex.
+	\a.\#\label{data9:e}Ten kilos of rocks isn't too much food.
+	\b.\#\label{data9:f}If ten kilos of rocks is too much food, I won't have any.
+	\c.\#\label{data9:g}Perhaps ten kilos of rocks is too much food.
+	\d.\#\label{data9:h}This year ten kilos of rocks will be too much food again.
+	\e.\#\label{data9:i}Would ten kilos of rocks be too much food?
+	
+	To summarize, in this section we have demonstrated that expressions that can be interpreted as amounts have a different distribution from those that are traditionally analyzed as degree denoting. Specifically, they are barred from contexts that select for degrees, such as the differential slot of comparatives and the argument position of measure words, while also occurring in contexts in which degree-denoting expressions are infelicitous. Furthermore, expressions of amount have interpretive properties that set them apart from degrees, properties that are consistent with them being transparent entities that carry information about what they are amounts of.  In the next section, we propose a compositional analysis that is able to capture these patterns.
+	
+	\section{Accounting for \textit{amounts}}
+	
+	%The gist of our proposal lies on the recognition, based on the data reviewed above in \S\ref{sec:data}, that amounts are not immediately recudible to degrees and thus should be represent as objects of type $d$. In this section we show how these facts follow from a conception of degrees as nominalized quantized properties and an adjusted semantics for \textit{much}.
+	
+	In this section we propose a compositional analysis of amount predications such as \ref{dog:b} and \ref{broccoli:b} that is able to explain the observations outlined in Section \ref{sec:data}. The overall conclusion from that discussion was that amounts may be a sort of expression of measure, but they cannot be equated with ordinary degrees.  In what follows, we demonstrate that instead, these facts follow from a conception of amounts as nominalized quantized properties in combination with a novel  semantics for \textit{many/much}. In the following section, we return to the question of how amounts are related to degrees, and contrast our account with previous proposals according to which degrees should be aligned to kinds.
+	
+	%\begin{itemize}
+	%\item We present the basic analysis by focusing on (\ref{broccoli:a}) with \textit{too much} \red{and then we discuss other cases}.
+	%\end{itemize}
+	
+	\subsection{Predicating individuals}
+	
+	
+	We begin with the ordinary use of numerically quantified noun phrases, as in \ref{dog:a} and \ref{broccoli:a}. We assume a predicative view of numerical indefinites \citep[as e.g.\ in][]{Landman:2004}, according to which such noun phrases, in their most basic instantiations, denote predicates of individuals (type $\langle e,t \rangle$):
+	
+	
+	
+	\ex.
+	\a. \sv{five dogs}$=\lambda x.^*\!dog(x) \wedge \mu_{\#}(x)=5$
+	\b. \sv{ten kilos of broccoli}$=\lambda x.broccoli(x) \wedge \mu_{WEIGHT}(x)=10kg$
+	
+	Here $\mu_{DIM}$ is a measure function that maps pluralities or portions of matter to a degree on a scale associated with dimension $DIM$ (cardinality in \Last[a], weight in \Last[b]). Thus crucially, we assume that an ordinary notion of degrees underlines the semantics of such noun phrases.
+	
+	Following a now-standard approach, we take such noun phrases to compose intersectively with the sentential predicate. Subsequent existential closure derives an existential statement about the entities in question (dogs, portions of broccoli, etc.).   
+	%\item Baseline: Adopting a predicative view of numerals (\red{check we said earlier about or the sort of data we used}), the subject DP in \ref{broccoli:a}, repeated below, denotes a predicate of individuals (portions of broccoli), with the quantity provided by a measure function ($\mu_{\textsc{weight}}$) that maps individuals to simple degrees, \ref{ind:a}. Subsequent intersection with the sentential predicate \ref{ind:b} and existential closure deliver \ref{ind:c} as the truth-conditions of \ref{broccoli:a}. (\red{CITE assumptions})
+	
+	\ex.[\ref{broccoli:a}]\label{ind} Ten kilos of broccoli are in the box.
+    
+	\ex.
+    \a.\label{ind:a}\sv{ten kilos of broccoli}$=\lambda x.\textit{broccoli}(x) \wedge \mu_{\textsc{weight}}(x) = 10kg$ 
+	\b.\label{ind:b}\sv{in the box}$=\lambda x.\textit{in-the-box}(x)$
+	\c.\label{ind:c}$\exists x[\textit{broccoli}(x) \wedge \mu_{\textsc{weight}}(x) = 10kg \wedge \textit{in-the-box}(x) ]$
+	
+	
+	
+	\subsection{Predicating amounts}
+	
+	
+	The analysis presented above  does not generalize to  examples such as  \ref{dog:b} and \ref{broccoli:b}, which do not make existential statements about  pluralities of dogs or portions of broccoli. Instead, as we previewed above, we propose  that amount predication constitutes its own form of predication, the application of a predicate to an amount of something \textit{construed as an individual}. To formalize this notion of amount-as-individual, we draw on previous proposals that align degrees to kinds \citep{Anderson&Morzycki:2015, Rothstein:2017, Scontras:2017}, and conceptualize amounts as nominalized quantity-uniform properties.   Just as ordinary properties---such as the property of being a dog---have entity correlates (abstracta that we refer to as kinds), so too does the property of being a particular kind of thing with a particular measure. The latter abstracta, on our account, are amounts. Amounts have a richer structure than ordinary simplex degrees, because they carry information about what they are amounts of. For clarity of presentation, we represent amounts as being of type $a$, though we conceive of amounts as a sort of of individuals (i.e.\ $D_a \subset D_e).$
+	
+	In the case of  both kinds and amounts, type shifting operations provide systematic mappings between properties and their corresponding abstracta. In the domain of kinds, these are the well-known `down' $^{\cap}$ and `up' $^{\cup}$ operators of \citet{Chierchia:1998}. There is however a crucial distinction between kinds and amounts: in the terminology of \citet{Krifka:1989}, kinds (at least on Chierchia's original conceptualization) are the nominalized counterparts of properties with cumulative reference (meaning that if any two entities have the property, so too does their union), whereas amounts are the nominalizations of quantized (quantity-uniform) properties (meaning that neither proper subparts of an entity nor unions of entities with the property also have that property):
+	
+	
+	\ex.
+	\a.CUM($P$) iff $\forall x,y  \in P, x \sqcup y \in P$ %\hfill \red{double check these}
+	\b.QUA($P$) iff $\forall x,y \in P, \neg x \sqsubset y$ %(and $x \sqcup y \notin P$)
+	
+	\noindent We therefore propose quantized variants of Chierchia's  mappings: the operator $^{\Cap}: \langle e,t\rangle \rightarrow a$ is a function mapping quantized predicates to amounts (undefined for non-quantized predicates); if defined, $^{\Cap}P$ denotes the entity correlate of a quantized property $P$. Conversely, the operator $^{\Cup}: a \rightarrow \langle e,t\rangle$ maps an amount to the set of entities realizing that amount. With the help of these operations, two distinct denotations of quantized noun phrases can be stated:
+	
+	\ex.\label{ints}
+	\a.\label{ints:a}\sv{ten kilos of broccoli}$\in D_{\langle e,t\rangle} \ = \lambda x . \textit{broccoli}(x) \wedge \mu_{\textsc{weight}}(x) = 10kg$ \\ $=\ ^{\Cup\Cap}\sv{ten kilos of broccoli}$%\\$=\ ^{\Cup\Cap}$ \sv{10kg of broccoli}$
+	\b.\label{ints:b} \sv{ten kilos of broccoli}$\in D_{a} = \ ^{\Cap}\lambda x . \textit{broccoli}(x) \wedge \mu_{\textsc{weight}}(x) = 10kg$
+	
+	
+	Amounts can be ordered with respect to one another: $a \succ_{DIM} a'$ means that the amount $a$ is ordered above the amount $a'$ with respect to the dimension $DIM$. Importantly, $DIM$ can (but need not) be the same dimension as that underlying the  interpretation of the corresponding quantized property. Thus \Next has a (false) reading on which an amount of tofu and an amount of broccoli are compared with respect to weight. But depending on the utterance context, it also allows readings on which $DIM$ is set to another dimension such as volume, nutritional value or caloric content; on such readings it expresses a contingent proposition.
+	
+	\ex. 8kg of tofu is more$_{DIM}$ food than 10kg of broccoli.
+	
+	We are not in a position to offer a fully developed proposal for how amounts may be ordered or how such orderings are derived, but we can make some initial observations. To start, the ordering of amounts of a particular sort of individual must respect the underlying part-whole relation on that domain. That is, if $x \in ^{\Cup}\!\! a$,  $y \in ^{\Cup} \!\!a'$ and  $y \sqsubset x$, then it must be the case that $a \succ a'$. Beyond this, it seems that orderings on amounts must be derived from orderings on the individuals that realize them.  Informally speaking, amount $a$ should be ordered higher than amount $a'$ with respect to dimension $DIM$ iff the measure (wrt. $DIM$) of  entities realizing $a$ exceeds  that of  entities realizing $a'$. Formalizing this, however, raises some challenging questions: must the relation hold among all pairs of individuals in $^{\Cup}\! a$ and in $^{\Cup}\! a'$? Only some of them?  Does this depend on the nature of the dimension and/or the sort of entities whose amounts are compared? We therefore have to leave a fuller investigation of amount ordering to future work.
+	
+	%\ex. $a \succ_{DIM} a' \leftrightarrow \forall x,y: x \in ^{\Cup}\!\!a \cap C    \wedge  y \in ^{\Cup}\!\!a' \cap C \ [\mu_{DIM}(x) > \mu_{DIM}(y)]$
+	
+	
+	
+	We now turn to how amount-denoting expressions  compose with other sentential elements to yield intuitively correct truth conditions for examples such as \ref{dog:b} and \ref{broccoli:b}. Recall from above that the amount reading of numerically quantified noun phrases is only available in the presence of some form of \textit{many}, \textit{much} or a related item. We therefore  propose a revised semantics for \textit{many/much}, according to which it expresses a relation between a predicative expression and two amounts:
+	
+	\ex.\label{much:basic} \sv{many/much}$=\lambda a_a' . \lambda P_{\langle e,t\rangle} . \lambda a_{a} : \exists X \subseteq P[a = \ ^{\Cap}X] \ . \ a \succeq_{\textsc{dim}} a'$
+	
+	While this is a departure from standard semantic analyses of these items (e.g.\ \citealt{Hackl:2000}), it is similar in spirit to proposals that treat them as operating in the domain of degrees rather than individuals \citep{Rett:2008,Solt:2015}.
+	
+	In the composition of \ref{broccoli:b}, repeated below, \textit{much} first combines with the degree modifier \textit{too}, which introduces some contextually salient threshold related to the  nominal complement, the maximal amount compatible with the purposes at hand; see \Next[a].\footnote{This is of course an overly simplified analysis of the semantics of \textit{too}, but one that is sufficient for the present purposes. See \citet{Meier:2003} for a full compositional analysis of \textit{too}  and related items.} At the next stage, the type $\langle e,t \rangle$ argument of \textit{much} is saturated by the substance noun \textit{food}; see \Next[b]. The result is a predicate of amounts that are presupposed to be amounts of food. That is, \Next[b] is defined for an amount $a$  iff $a$ is the entity correlate of a quantized property that lives in the denotation of the nominal \textit{food}; when defined, it asserts that $a$ is ordered above the relevant threshold. At the last stage, this predicate is applied to the amount denotation of \textit{ten kilos of broccoli}. The result \Next[c] presupposes that ten kilos of broccoli is an amount of food and asserts that this amount exceeds the relevant threshold in a food-related ordering, where the specification of the dimension $DIM$ is determined by the context in combination with the denotation of the substance noun (e.g.\ it may be a scale based on nutritional value, on satiating power, on simple volumes of food, etc.).
+	
+	%In addition to the definedness condition that amounts, hence the subject of \ref{broccoli:b}), be quantized, \ref{much:b} requires the extension of \textit{10kg of broccoli} to live in the denotation of the nominal \textit{food} (recall the contrast in \ref{data4}. Then, the proposed meaning in \ref{much:c} determines that an amount of 10kg of broccoli portions exceeds some relevant threshold based on a food-related scale, whose final specification is also set by the context (e.g. it may be a scale based on nutritional value, on satiating power, on simple volumes of food, etc.).
+	
+	\ex.[\ref{broccoli:b}] Ten kilos of broccoli is too much food.
+	
+	\ex.\label{much}
+	\a.\label{much:a}\sv{too much}$=\lambda P_{\langle e,t\rangle} . \lambda a_{a} : \exists X \subseteq P[a = \ ^{\Cap}X] \ . \ a \succ_{\textsc{dim}} \theta_{P}$
+	\b.\label{much:b}\sv{too much food}$= \lambda a_{a} : \exists X \subseteq \sv{food}[a = \ ^{\Cap}X] \ . \ a \succ_{\textsc{dim}} \theta_{\textit{food}}$
+	\c.\label{much:c}\sv{\ref{broccoli:b}} = \sv{too much food}($^{\Cap}$\sv{10kg of broccoli}) $ = \textit{10kg of broccoli} \succ_{\textsc{dim}} \theta_{\textit{food}}$\\
+	\hfill defined only iff QUA(\textit{10kg of broccoli}) and \sv{10kg of broccoli} $\subseteq$ \sv{food}.
+	
+	\subsection{A complication}
+	
+	The proposal developed above might seem to face a problem with examples such as \Next: we have analyzed predicates such as \textit{too much food} as expressing properties of amounts, but in this example, what Sue has purchased is an actual portion of food, not an abstract amount. That is, \Next has an individual rather than amount interpretation.
+	
+	\ex. Sue bought too much food.
+	
+	Here, the complex and transparent nature of amounts enables a solution. Specifically, a type shifting operator can map an amount to the set of individuals that realize that amount.
+	
+	\ex.\label{shift:a}\sv{\textsc{shift}}$=\lambda A_{\langle a,t\rangle}. \lambda x_{e} . \exists a \in  A[x \in \ ^{\Cup}a]$ 
+	
+	With this in place, \LLast receives the following analysis (where for clarity of presentation the presupposition introduced by \textit{much} is not represented):
+	
+	\ex.\label{shift:b}\sv{Sue bought SHIFT (too much food)}$=$ \\ $\exists x \exists a[\textit{too-much-food}(a) \wedge x \in \  ^{\Cup}a \ \wedge \ \textit{bought}(sue, x)]$
+	
+	%\begin{itemize}
+	%\item  In order to combine our \textit{much} with predicates that range over individuals, as in \textit{I bought too much food}, we shift predicates of amount to predicates of individuals realizing those amounts:
+	
+	%\ex.\label{shift}
+	%\a.\label{shift:a}\sv{\textsc{shift}}$=\lambda A_{\langle a,t\rangle}. \lambda x_{e} . \exists a \in  A[x \in \ ^{\Cup}a]$
+	%\b.\label{shift:b}\sv{I bought SHIFT (too much food)}$= \ \exists x,a[\textit{too-much-food}(a) \wedge \textit{bought}(I, x) \ \wedge \ x \in \  ^{\Cup}a]$
+	
+	Thus the existence of mappings between amounts and the individuals that realize them  allows constituents containing the amount-introducing element \textit{much} to also occur in contexts calling for sets of individuals.
+	
+	
+	\subsection{Summary}\label{sec:summary}
+	
+	To summarize, in this section we have proposed that noun phrases such as \textit{five dogs} and \textit{ten kilos of broccoli} have an interpretation on which they denote \textit{amounts},  understood as the entity correlates of quantized properties. This analysis, coupled with a novel semantics for \textit{many/much}, allows us to explain the otherwise puzzling patterns of distribution and interpretation outlined in the previous section.
+	
+	We have taken amounts to be  kind-like entities, though differing from kinds in the structure of the corresponding properties: whereas kinds correspond to cumulative properties, amounts are the correlates of  quantized properties. And just as mappings exist between kinds and the ordinary individuals that realize them, so too, we argue, are there mappings between amounts and their concrete instantiations. It is the existence of these mappings that allows noun phrases such as \textit{five dogs}  and \textit{ten kilos of broccoli} to have both individual and amount interpretations, and thus to occur both in contexts that select for amounts and those that select for individuals. Furthermore, with this analysis we also capture the observation that amount predications do not make an existential commitment relative to instantiations of the amount (cf.\ \citealt{Rett:2014}). An example such as \textit{Five dogs are barking} expresses existential quantification over the set denoted by \textit{five dogs} (the individual interpretation). By contrast,  \textit{Five dogs is too many pets} predicates a property  directly of \textit{five dogs} construed as an individual (the amount interpretation), and thus does not commit to the existence of any particular plurality of five dogs.
+	
+	Crucially, amounts on our analysis are distinct from degrees. Degrees (type $d$) are the outputs of measurement operations, whereas amounts (type $a$, a subsort of type $e$) are derived via an operation of nominalization, applied to a predicate whose interpretation is itself based on an underlying degree representation. This sortal distinction explains the differing distributions of degree- and amount-denoting expressions, in particular the fact that amounts cannot occur in contexts that select for degrees. The amount-degree distinction also lets us understand the scalar flexibility characterizing amounts: whereas degrees are conventionally associated with scales, amounts are not; rather, the ordering relations which amounts may participate in are to some extent contextually determined. Finally, the presuppositional nature of amount predications, as evidenced by the infelicity of  examples such as \#\textit{Ten kilos of rocks is too much food}, arises because amounts are necessarily amounts of \textit{something}; the predicate of amounts \textit{too much food} can only be true (or false) of an amount of food.
+	
+	In short, our analysis treats amounts as entities in their own right, and amount predication as a previously unrecognized form of predication. In the next section, we consider in more detail the relation between amounts and degrees.
+	
+	\section{Discussion: on the nature of degrees, kinds and amounts}\label{sec:discussion}
+	
+	We have identified in this paper a new sort of predication, amount predication, whose account requires augmenting classical theories of degree---whether they are considered to be simplex (abstract) objects (e.g. \citealt{vonStechow:1984, Heim:2000}, a.o.) or derivative of individuals (e.g. \citealt{Cresswell:1977,Bale:2008})---with a new sort of entity: amounts. Our account thus has advantages over approaches that only have degrees at their disposal. \cite{Rett:2014,Rett:2018} provides the most comprehensive proposal of (a subset of) our amount predications in \ref{dog:b}/\ref{broccoli:b} along the latter lines. We have identified two general shortcomings of such a line of analysis, which we believe share a common source, namely its grounding in  operations of measurement on entities of some sort (individuals or sets of degrees). The application of a measure function---understood somewhat abstractly as a mapping  from the relevant entities to their  corresponding degrees along some scale---requires the existence of an individual to be measured. This in turn comes with the aforementioned unwanted existential commitments regarding such individuals: but amount predications do not make any existential commitment about the individuals that instantiate the relevant amount \citep{Mendia&Espinal:2024a}.   % -- shortcomings that are not particular to \posscitet{Rett:2014,Rett:2018} particular formulation, and we believe that the two of them share a common origin: the deployment of measuring functions on ordinary ($e$-type) individuals. The use of such measuring functions -- understood somewhat abstractly as relating individual entities to their corresponding degrees along some dimension -- require the existence of some individual to be measured, which in turn comes with the aforementioned unwanted existential commitments about some such individuals: amount predicates do not make any existential commitment about the individuals that instantiate the relevant amount \citep{Mendia&Espinal:2024a}. 
+	
+	A second undesirable consequence of a measurement-based account of this form is that it reduces amount predication to degree predication, that is, to the ascription of a property to a degree. We have seen however that an  \textbf{opaque} notion of degrees---i.e., one in which they carry no information regarding the individuals whose measurements they represent---is  not fine-grained enough to capture the rich semantic behavior of amount predication. In particular, the greater scalar flexibility of amounts \textit{vis-à-vis} degrees shows in part that the notion of amount can only be conceived as a sort of object carrying enough information to determine what it constitutes an amount of (see contrasts in \ref{contingent}/\ref{false}). Degrees are not well-suited to provide such rich structures, and we believe that this is correct: our amounts are not to be understood as competing with degrees, but as building on them; indeed, degrees such as \textit{ten kilos} are required to express amount predications.
+
+    %In addition, relying on analyses of degrees that are \textbf{opaque} -- i.e. degrees carrying no information relative to the individuals whose measurements they represent -- are not fine-grained enough to capture the rich semantic behavior of amount predication.
+	
+	In order to obtain the required \textbf{transparency} we have followed \posscitet{Scontras:2017} idea that the grammar allows the construction of a particular sort of abstracta, one that is built out of \textit{quantity-uniform} properties. As we mentioned earlier, however, we divert from Scontras' stronger conclusion that such abstracta provide a suitable replacement for degrees: we argue instead that the methods and techniques proposed by \cite{Scontras:2017} \textit{qua} a theory of degree are in fact useful \textit{qua} a theory of amount.
+	
+	Much in line with the proposal that ordinary degrees do not provide a suitable abstraction to deal with amount predication, \citet{Mendia&Espinal:2024a} provide a further step towards our amounts by building on the nominalizations of quantity-uniform properties (see \ref{intensional} above). However, unlike \posscitet{Scontras:2017}, their account is built around the idea that the entity correlates of quantity-uniform properties are themselves measurable, thereby raising questions as to the nature of such measurement operations. Our simpler account in terms of amount predication avoids these complications simply by treating amounts as entity correlates of \textit{quantized} properties, which grants them the ability to be compared to each other directly, without the need to resort to non-standard variations of measuring functions.
+	
+	The notion of quantization is critical for our proposal to work. Quantized predicates grant that no subpart of e.g. \textit{ten kilos of broccoli} counts itself as ten kilos of broccoli (and also avoids that the union of two amounts result in the same amount). This notion is closely related to that of monotonicity, which is known to explain a number of contrasts regarding expressions of measurement across languages (see e.g. \citealt{Schwarzschild:2006, Nakanishi:2007}). For instance, amount predication is not possible when the amount does not monotonically track the relevant dimension of comparison:
+	
+	\ex.
+	\a. Ten liters of water is too much liquid. 
+	\b.*Twenty-degree water is too much liquid.
+	
+	In some way, given the high resemblance of our mappings between amounts and predicates of individuals to those between kinds and predicates, one may wonder whether amounts and kinds are not in fact closer than it meets the eye. Formally, the main difference consists precisely in the reliance on quantized properties for amounts \textit{vs}. cumulative properties in the case of kinds. If kinds are understood as representative of the commonalities that hold of a collection of objects---i.e. regularities that occur in nature, then amounts could be understood for \textit{quantities} as kinds are for \textit{qualities}. This may or may not be so, but what our main conclusions show is that amounts cannot take the place of degrees in the grammar, and that degrees are not the correct sort of object to model amount interpretations.
+	
+	Could then classical degrees such as the denotations of \textit{ten kilos} and \textit{twenty degrees} be reduced to (some sort of) kinds themselves? The idea is not new: besides \posscitet{Scontras:2017} own proposal, \cite{Anderson&Morzycki:2015} view degrees as (sets of) kinds of states, \cite{Moltmann:2009} as particularized properties and, relatedly, \cite{Rothstein:2017} treats numbers as the individual property correlates of equinumerous pluralities. Our proposal does not offer an answer to this question, but it is clear on one account: if degrees are to be treated as kinds, they must be of a different sort than our amounts, given their distinct syntactic distribution and semantic behavior.	
+	
+	Before concluding this section, we also wish to clarify that the amount-individual duality we have invoked here is independent of the well-known container-measure duality discussed by \cite{Partee&Borschev:2004} and \cite{Rothstein:2017}, among many others. As observed by those authors, a pseudo-partitive noun phrase such as \textit{three glasses of wine} can be interpreted either as a three-member plurality of glasses containing wine  (the container interpretation) or as a portion of wine whose measure in cups equals three (the measure interpretation). 
+	Further, as with our amount interpretation,  the measure reading can be signaled by non-canonical singular agreement (e.g.\ \textit{There is 3 glasses of wine in the soup}). But crucially, on both the container and measure readings, a noun phrase such as this denotes a set of ordinary individuals, i.e.\ glasses or portions of wine. The amount interpretation is something different; it is an intensional entity (an abstracta) that represents the amount of something as an individual. As support for this distinction, observe  that the amount interpretation is also available in the absence of a pseudo-partitive structure, in particular with numerically quantified plural noun phrases (e.g.\ \textit{Five dogs is too many pets}), where there is no possibility of a container/measure ambiguity.
+	
+
+	\section{Conclusion}
+	
+	In this paper we investigate an intriguing albeit common set of copular constructions such as \textit{Five dogs is too many pets} and \textit{Ten kilos of broccoli is too much food} (\citealt{Rett:2014,Mendia&Espinal:2024a}). What all these constructions have in common is that they convey information about amounts or quantities, stating of the subject that it constitutes a certain amount or quantity of something. We take these data at face value and argue that they constitute its own type of predication, one that is reducible to neither degrees nor other sorts of objects. We provide a compositional account of amount predication by building on earlier ideas whereby degrees are derivative of individuals \citep{Scontras:2017,Rothstein:2017}, but instead conclude that such techniques are only suitable for explaining amount predication, and do not readily generalize to other, more common uses degree expressions in natural language (e.g. such as the use of degrees to analyze gradability, comparatives, etc.).
+
+    Our amounts are therefore closer to be kind-like entities, with the important difference that ordinary kinds correspond to cumulative properties and amounts correspond to quantized properties. Our analyses exploits familiar mappings between kinds and their corresponding instantiations in the area of amounts, for which there also exist, we argue, corresponding mappings  to and from their particular instantiations. Conceptually, amounts contrast with classical type $d$ degrees in that they are not the output of measurement operations over ordinary $e$-type individuals; instead, amounts are the result of a nominalization operation over quantized properties. Like kinds, amounts are individuals in their own right, and so we have granted them their own domain $D_a$, a subset of $D_e$, the domain of entities.
+	
+	\bibliographystyle{chicago}
+	%\bibliography{stephbib}
+	\bibliography{sub29}
+\end{document}
