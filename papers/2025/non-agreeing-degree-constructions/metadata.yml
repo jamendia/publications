@@ -1,0 +1,47 @@
+id: 2025nad
+type: article
+
+title: "Non-agreeing degree constructions"
+
+authors:
+  - given: "Jon Ander"
+    family: "Mendia"
+  - given: "Maria Teresa"
+    family: "Espinal"
+
+year: 2026
+
+status: published
+
+publication:
+  type: journal-article
+  journal: "Journal of Linguistics"
+  volume: 61
+  issue: 2
+  pages: "265-300"
+
+identifiers:
+  doi: "10.1017/S0022226724000148"
+
+topics:
+  - syntax
+  - semantics
+  - agreement
+  - copular clauses
+
+languages:
+  - English
+
+keywords:
+  - agreement
+  - copular clauses
+  - degrees
+  - measurement
+  - Spanish
+
+files:
+  paper: "paper.pdf"
+#  source: "source/paper.tex"
+
+links:
+  doi: "https://doi.org/10.1017/S0022226724000148"
