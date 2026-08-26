@@ -1,0 +1,42 @@
+id: 2022presupposition-projection
+type: article
+
+title: "Pragmatic filtering and presupposition projection"
+
+authors:
+  - given: "Jon Ander"
+    family: "Mendia"
+
+year: 2022
+
+status: published
+
+publication:
+  type: book-chapter
+  journal: "Empirical Issues in Semantics and Pragmatics"
+  volume: 14
+#  issue: 2
+  pages: "189-218"
+
+identifiers:
+  issn: "1769-7158"
+
+topics:
+  - pragmatics
+  - presupposition projection
+
+languages:
+  - English
+
+keywords:
+  - presupposition
+  - projection
+  - proviso problem
+  - pragmatics
+
+files:
+  paper: "mendia2022.pdf"
+#  source: "source/paper.tex"
+
+links:
+  doi: "http://www.cssp.cnrs.fr/eiss14/"
