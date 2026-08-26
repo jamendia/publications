@@ -20,7 +20,7 @@ agreement · copular clauses · degrees · measurement · Spanish
 
 ## Files
 
-- [`non-agreeing-degree-predicates.pdf`](non-agreeing-degree-predicates.pdf) — article
+- [`mendia&espinal2025.pdf`](mendia&espinal2025.pdf) — article
 - [`metadata.yaml`](metadata.yaml) — bibliographic metadata
 <!-- [`source/paper.tex`](source/paper.tex) — LaTeX source -->
 
@@ -29,4 +29,4 @@ agreement · copular clauses · degrees · measurement · Spanish
 This is an Open Access article, distributed under the terms of the Creative Commons Attribution licence [`http://creativecommons.org/licenses/by/4.0'](http://creativecommons.org/licenses/by/4.0), which permits unrestricted re-use, distribution and reproduction, provided the original article is properly cited.
 
 ## Copyright
-© Jon Ander Mendia & M.Teresa Espinal, 2026. Published by Cambridge University Press.
+© Jon Ander Mendia & M.Teresa Espinal, 2025. Published by Cambridge University Press.

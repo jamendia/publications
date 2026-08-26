@@ -44,7 +44,7 @@ publications/
 
 - [Non-agreeing degree constructions](papers/2025/non-agreeing-degree-constructions/)
 - [A side-road to degrees](papers/2025/side-road-to-degrees/)
-- [On the distinction between amounts and degrees](papers/2025/amounts-vs-degrees/)
+- [On the distinction between amounts and degrees](papers/2025/on-amounts/)
 - [The "soler" + INF periphrasis in Spanish](papers/2025/soler/)
 
 ### 2024
