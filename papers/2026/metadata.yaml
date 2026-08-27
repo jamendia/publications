@@ -1,0 +1,48 @@
+id: 2026pcc
+type: article
+
+title: "Silencing the PCC"
+
+authors:
+  - given: "Keine"
+    family: "Stefan"
+  - given: "Jon Ander"
+    family: "Mendia"
+
+year: 2026
+
+status: published
+
+publication:
+  type: journal-article
+  journal: "Linguistic Inquiry"
+#  volume: 61
+#  issue: 2
+  pages: "1-84"
+
+identifiers:
+  doi: "10.1162/LING.a.574"
+
+topics:
+  - syntax
+  - agreement
+  - case
+
+languages:
+  - English
+
+keywords:
+  - Person Case Constraint
+  - Agree
+  - ellipsis
+  - morphological ineffability
+  - person hierarchy
+  - φ-features
+  - Basque
+
+files:
+  paper: "keine&mendia2026.pdf"
+#  source: "source/paper.tex"
+
+links:
+  doi: "https://doi.org/10.1162/LING.a.574"
