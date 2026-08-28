@@ -24,6 +24,8 @@ This repository contains my published work in linguistics. It may occassionally 
 
 ### 2022
 
+- [Structural effects on implicature calculation](papers/2022/structural-effects/)
+
 - [Pragmatic filtering and presupposition projection](papers/2022/filtering-presupposition-projection/)
 
 ## Talks
@@ -44,8 +46,8 @@ Datasets and other supplementary materials are available in
 
 ## Bibliography
 
-- [BibTeX bibliography](bibliography/bibliography.bib)
-- [JSON bibliography](bibliography/bibliography.json)
+- [BibTeX bibliography](bibliography/mendia-bibliography.bib)
+- [JSON bibliography](bibliography/mendia-bibliography.json)
 
 ## Citation
 
