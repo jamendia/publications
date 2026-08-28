@@ -5,7 +5,7 @@
 **Mendia, J.A.** and Espinal, M.T. 2023. "A note on sufficiency predicates."
 *Proceedings of the Annual Meeting of the North East Lingusitic Society* 53(2): 199-209.
 
-[Book website](https://glsa-umass.github.io/publications.html#nels)
+[Book website](https://glsa-umass.github.io/publications.html#nels).
 
 
 ## Abstract

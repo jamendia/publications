@@ -3,9 +3,9 @@
 ## Citation 
 
 **Mendia, J.A.** and Espinal, M.T. 2025. "Non-agreeing degree constructions."
-*Journal of Linguistics* 61(2): 265–300. [DOI](https://doi.org/10.1017/S0022226724000148)
+*Journal of Linguistics* 61(2): 265–300. [DOI](https://doi.org/10.1017/S0022226724000148).
 
-[Journal website](https://www.cambridge.org/core/journals/journal-of-linguistics/article/nonagreeing-degree-constructions/605720350D6316BE330118711025A22F)
+[Journal website](https://www.cambridge.org/core/journals/journal-of-linguistics/article/nonagreeing-degree-constructions/605720350D6316BE330118711025A22F).
 
 
 ## Abstract
