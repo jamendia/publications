@@ -17,6 +17,11 @@ This repository contains my published work in linguistics. It may occassionally 
 
 - [When subjects do not agree: a semantic perspective](papers/2024/semantic-subject-agreement/)
 
+### 2023
+
+- [A note on sufficiencty predicates](papers/2024/sufficiency-predicates/)
+
+
 ### 2022
 
 - [Pragmatic filtering and presupposition projection](papers/2022/filtering-presupposition-projection/)
