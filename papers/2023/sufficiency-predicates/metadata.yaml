@@ -1,0 +1,42 @@
+id: 2023sufficiency
+type: article
+
+title: "A note on sufficiency predicates"
+
+authors:
+  - given: "Jon Ander"
+    family: "Mendia"
+  - given: "Maria Teresa"
+    family: "Espinal"
+
+year: 2023
+
+status: published
+
+publication:
+  type: proceedings-article
+  journal: "Proceedings of the Annual Meeting of the North East Lingusitic Society"
+  volume: 53
+  issue: 2
+  pages: "199-209 "
+
+identifiers:
+  isbn: "979-8869982261"
+
+topics:
+  - sufficiency expressions
+  - subjecthood
+
+languages:
+  - English
+
+keywords:
+  - sufficiency expressions
+  - excess expressions
+  - degrees
+  - subjects
+  - agreement
+
+files:
+  paper: "mendia&espinal2023.pdf"
+#  source: "source/paper.tex"
