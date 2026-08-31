@@ -1,0 +1,38 @@
+id: 2022neuterrel
+type: article
+
+title: "Neuter relative constructions"
+
+authors:
+  - given: "Jon Ander"
+    family: "Mendia"
+
+year: 2022
+
+status: published
+
+publication:
+  type: proceedings-article
+  journal: "Proceedings of the Annual Meeting of the North East Lingusitic Society"
+  volume: 52
+  issue: 2
+  pages: "231-240"
+
+identifiers:
+  isbn: "979-8362474294"
+
+topics:
+  - relative clauses
+
+languages:
+  - English
+
+keywords:
+  - relative clauses
+  - degrees
+  - neuter expressions
+  - Spanish
+
+files:
+  paper: "mendia2022c.pdf"
+#  source: "source/paper.tex"

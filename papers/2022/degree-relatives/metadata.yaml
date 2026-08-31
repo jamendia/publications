@@ -1,0 +1,42 @@
+id: 2022degrels
+type: article
+
+title: "Degree relative clauses in Spanish"
+
+authors:
+  - given: "Jon Ander"
+    family: "Mendia"
+
+
+year: 2022
+
+status: published
+
+publication:
+  type: journal-article
+  journal: "Isogloss"
+  volume: 8
+  issue: 5
+  pages: "1-15"
+
+identifiers:
+  doi: "10.5565/rev/isogloss.216"
+
+topics:
+  - relative clauses
+
+languages:
+  - English
+
+keywords:
+  - degree expressions
+  - relative clauses
+  - Spanish
+
+
+files:
+  paper: "mendia2022b.pdf"
+#  source: "source/paper.tex"
+
+links:
+  doi: "https://doi.org/10.5565/rev/isogloss.216"

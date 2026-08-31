@@ -28,6 +28,10 @@ This repository contains my published work in linguistics. It may occassionally 
 
 - [Pragmatic filtering and presupposition projection](papers/2022/filtering-presupposition-projection/)
 
+- [Degree relative clauses in Spanish](papers/2022/degree-relatives/)
+
+- [Neuter relative constructions](papers/2022/neuter-relatives/)
+
 ## Talks
 
 See [`talks/`](talks/).
